@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"fmt"
 	"strings"
-	"http_edig2/src/edig"
 	"encoding/json"
 	"github.com/miekg/dns"
+	"../src/edig"
 )
 
 

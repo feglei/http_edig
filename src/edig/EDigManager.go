@@ -9,7 +9,8 @@ import (
 	"fmt"
 )
 
-var digPath = "../../res/edig_mac"
+//var digPath = "./res/edig_mac"
+var digPath = "./res/edig_centos"
 
 func CMDDig(server string, domain string, clientIp string)( tempDigModel DIG_MODEL, err error ) {
 

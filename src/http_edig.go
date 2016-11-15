@@ -13,7 +13,7 @@ import (
 
 
 var ServerList []string = []string{
-	"223.5.5.5", // dns pod
+	"119.29.29.29", // dns pod
 	"223.5.5.5", // 阿里
 	"223.6.6.6", // 阿里
 }
@@ -49,13 +49,13 @@ func Query(w http.ResponseWriter, r *http.Request) {
 
 		digModel, err := edig.EDig( server, domain, ip )
 
-		if err != nil {
+		if err == nil {
 			questType = "system/dig"
 			digModel, err = edig.CMDDig( server, domain, ip )
 		}
 
 		if err != nil{
-			fmt.Fprintf(w, "error: " + "domain="+domain + "server="+server + "ip="+ip)
+			fmt.Fprintf(w, "error: " + "domain="+domain + ", server="+server + ", ip="+ip)
 			return
 		}
 

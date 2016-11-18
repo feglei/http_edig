@@ -30,7 +30,8 @@ func GetServerIP()(string){
 }
 
 func Query(w http.ResponseWriter, r *http.Request) {
-
+	w.Header().Set("connection", "close")
+	defer r.Body.Close()
 	r.ParseForm()
 
 	domain := r.Form.Get( "domain" )
